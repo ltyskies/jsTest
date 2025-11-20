@@ -10,3 +10,15 @@ Function.prototype._call = function(thisArg, ...argArray) {
 
   return result
 }
+
+const person = {
+    name: "sky"
+};
+
+function sayName() {
+    console.log("大家好，我是 " + this.name);
+}
+
+sayName.call(person); 
+
+sayName._call(person); 
