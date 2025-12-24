@@ -1,9 +1,9 @@
-function myDebounce(func,delay){
+function myThrottle(fn,delay){
   let timer = null
   return function(...args){
     if(!timer){
       timer = setTimeout(()=>{
-        func.call(this,...args)
+        fn.apply(this,args)
         timer = null
       },delay)
     }
